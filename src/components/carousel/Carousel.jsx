@@ -12,19 +12,23 @@ import { useRecursiveTimeout } from "../../helper/useRecursiveTimeout";
 
 /* Data */
 import BgImg from "../../assets/carousel_image.png";
+import Dots from "../ui/dots/Dots";
 
 const PARALLAX_FACTOR = 1.5;
 const AUTOPLAY_INTERVAL = 4000;
 
 const Carousel = () => {
+  const [parallaxValues, setParallaxValues] = useState([]);
+  const [selectedDot, setSelectedDot] = useState(2);
+
   const [emblaRef, embla] = useEmblaCarousel({
     loop: true,
+    startIndex: 2,
     speed: 3,
     skipSnaps: false,
-    draggable: false,
+    draggable: true,
+    dragFree: false,
   });
-
-  const [parallaxValues, setParallaxValues] = useState([]);
 
   const autoplay = useCallback(() => {
     if (!embla) return;
@@ -47,7 +51,16 @@ const Carousel = () => {
     stop();
   }, [embla, stop]);
 
-  const onScroll = useCallback(() => {
+  const scrollTo = useCallback(
+    (index) => {
+      if (!embla) return;
+      embla.scrollTo(index);
+      stop();
+    },
+    [embla, stop]
+  );
+
+  const onScrollHandler = useCallback(() => {
     if (!embla) return;
 
     const engine = embla.dangerouslyGetEngine();
@@ -72,13 +85,27 @@ const Carousel = () => {
     setParallaxValues(styles);
   }, [embla, setParallaxValues]);
 
-  useEffect(() => {
+  const onSelectHandler = useCallback(() => {
     if (!embla) return;
-    onScroll();
-    embla.on("scroll", onScroll);
-    embla.on("resize", onScroll);
-    embla.on("pointerDown", stop);
-  }, [embla, onScroll, stop]);
+    setSelectedDot(embla.selectedScrollSnap());
+  }, [embla, setSelectedDot]);
+
+  useEffect(() => {
+    if (embla) {
+      onScrollHandler();
+      embla.on("scroll", onScrollHandler);
+      embla.on("resize", onScrollHandler);
+      embla.on("select", onSelectHandler);
+      embla.on("pointerDown", stop);
+
+      return () => {
+        embla.off("scroll", onScrollHandler);
+        embla.off("resize", onScrollHandler);
+        embla.off("select", onSelectHandler);
+        embla.off("pointerDown", stop);
+      };
+    }
+  }, [embla, onScrollHandler, onSelectHandler, stop]);
 
   useEffect(() => {
     play();
@@ -106,13 +133,19 @@ const Carousel = () => {
                   </a>
                 </div>
                 <div className={styles.slideCover}>
-                  <img src={BgImg} alt="Cover Image" />
+                  <img src={BgImg} alt="Cover Background" />
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <Dots
+        numOfDots={parallaxValues.length}
+        numOfActive={selectedDot}
+        callableFn={scrollTo}
+        className={styles.emblaDots}
+      />
       <LeftArrow className={styles.emblaButtonPrev} onClick={scrollPrev} />
       <RightArrow className={styles.emblaButtonNext} onClick={scrollNext} />
     </div>

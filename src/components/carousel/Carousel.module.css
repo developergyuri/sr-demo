@@ -18,6 +18,13 @@
   right: 20px;
 }
 
+.emblaDots {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 .emblaViewport {
   overflow: hidden;
 }
