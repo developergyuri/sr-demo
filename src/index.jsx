@@ -1,11 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+
+/* Styles */
+import "./index.css";
+
+/* Own Components */
+import Header from "./components/header/Header";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
