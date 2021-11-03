@@ -33,6 +33,8 @@
 }
 
 .searchbar > input {
+  width: calc(100% - 20px);
+  padding-right: 5px;
   background: transparent;
   outline: none !important;
   color: #ffffff;
@@ -46,4 +48,18 @@
 
 .searchbar > svg:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 992px) {
+  .searchbar {
+    margin-right: 0;
+    margin-left: 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .searchbar {
+    max-width: 240px;
+    width: auto;
+  }
 }

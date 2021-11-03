@@ -1,11 +1,32 @@
-.container {
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerOverlay {
+  position: fixed;
+  top: 145px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 998;
+}
+
+.header {
   min-height: 130px;
   background: #212121;
   padding: 30px 50px 0 50px;
   color: #ffffff;
 
   display: grid;
+  /**/
   grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  /**/
   grid-template-columns: auto 1fr auto;
   grid-template-rows: min-content 1fr;
   gap: 15px 15px;
@@ -13,7 +34,6 @@
     "Infos Logo Actions"
     "Menu Menu Menu";
 
-  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
@@ -119,6 +139,13 @@
   align-items: center;
 }
 
+.actionIcons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
 .actionIcon {
   margin: 0 25px;
   cursor: pointer;
@@ -138,8 +165,54 @@
   align-items: flex-end;
 }
 
+.drawerIcon {
+  grid-area: DrawerIcon;
+  display: none;
+  position: relative;
+  width: 30px;
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 2px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.drawerIcon::before,
+.drawerIcon::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transform-origin: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.drawerIcon::before {
+  transform: translate(0%, -10px);
+}
+
+.drawerIcon::after {
+  transform: translate(0%, 10px);
+}
+
+.drawerIcon.isClicked {
+  background-size: 0% 3px;
+}
+
+.drawerIcon.isClicked::before {
+  transform: rotate(45deg);
+}
+
+.drawerIcon.isClicked::after {
+  transform: rotate(-45deg);
+}
+
 @media screen and (max-width: 1240px) {
-  .container {
+  .header {
     padding: 15px 25px 0 25px;
     gap: 10px 10px;
     grid-template-columns: 1fr 1fr;
@@ -153,4 +226,90 @@
   .infos {
     align-items: flex-end;
   }
+}
+
+@media screen and (min-width: 993px) {
+  .drawerOverlay {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    height: 115px;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "Logo DrawerIcon"
+      "Actions Actions";
+  }
+
+  .menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 145px;
+    width: 75%;
+    max-width: 350px;
+    background-color: #212121;
+    padding: 20px;
+    transform: translateX(100%);
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu.isOpened {
+    transform: translateX(0%);
+  }
+
+  .infos {
+    display: none;
+  }
+
+  .actions {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .actionIcon {
+    margin: 0 15px;
+  }
+
+  .drawerIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .actionIcon {
+    margin: 0 10px;
+  }
+}
+
+.subHeader {
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.subHeader > svg {
+  height: 26px;
+  width: auto;
+  margin: 0 20px;
+}
+
+.subHeader > span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #f67da1;
 }
