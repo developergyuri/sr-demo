@@ -1,0 +1,156 @@
+.container {
+  min-height: 130px;
+  background: #212121;
+  padding: 30px 50px 0 50px;
+  color: #ffffff;
+
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: min-content 1fr;
+  gap: 15px 15px;
+  grid-template-areas:
+    "Infos Logo Actions"
+    "Menu Menu Menu";
+
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.infos {
+  grid-area: Infos;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.infoTel {
+  color: #a6a6a6;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-right: 37px;
+  cursor: pointer;
+}
+
+.infoLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.link {
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #ffffff !important;
+}
+
+.link:first-child {
+  padding: 0 14px 0 0;
+}
+
+.link:last-child {
+  padding: 0 0 0 15px;
+}
+
+.link:not(:first-child):not(:last-child) {
+  padding: 0 14px 0 15px;
+}
+
+.link:not(:last-child) {
+  border-right: 1px solid #5c5c5c;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  height: 1px;
+  background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 0% 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.link:first-child::after {
+  left: 0;
+  right: 14px;
+}
+
+.link:last-child::after {
+  left: 15px;
+  right: 0;
+}
+
+.link:not(:first-child):not(:last-child)::after {
+  left: 15px;
+  right: 14px;
+}
+
+.link:hover::after {
+  background-size: 100% 1px;
+}
+
+.linkIcon {
+  width: 9px;
+  height: auto;
+  margin: 0 5px;
+}
+
+.logo {
+  grid-area: Logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions {
+  grid-area: Actions;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.actionIcon {
+  margin: 0 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.actionIcon:hover {
+  transform: scale(1.1);
+}
+
+.menu {
+  grid-area: Menu;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 1240px) {
+  .container {
+    padding: 15px 25px 0 25px;
+    gap: 10px 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-areas:
+      "Infos Actions"
+      "Logo Logo"
+      "Menu Menu";
+  }
+
+  .infos {
+    align-items: flex-end;
+  }
+}
