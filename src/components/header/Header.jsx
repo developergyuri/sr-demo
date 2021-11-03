@@ -5,7 +5,7 @@ import classNames from "classnames";
 import styles from "./Header.module.css";
 
 /* Own Components */
-import { ReactComponent as ArrowDownIcon } from "../../assets/header_arrow.svg";
+import { ReactComponent as ArrowDownIcon } from "../../assets/arrow_down.svg";
 import { ReactComponent as ProfileIcon } from "../../assets/header_profile.svg";
 import { ReactComponent as HeartIcon } from "../../assets/header_heart.svg";
 import { ReactComponent as BagIcon } from "../../assets/header_bag.svg";
