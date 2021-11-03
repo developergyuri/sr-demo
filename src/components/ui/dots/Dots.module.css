@@ -1,0 +1,23 @@
+.dotsConteiner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dotsConteiner > .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 15px;
+  cursor: pointer;
+  background-color: #212121;
+  opacity: 0.2;
+  transition: all 0.3s ease-in-out;
+}
+
+.dot.selected {
+  opacity: 1;
+}
