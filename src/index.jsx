@@ -5,11 +5,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 /* Own Components */
-import Header from "./components/header/Header";
+import Layout from "./components/layout/Layout";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
+    <Layout>
+      <div>Content</div>
+    </Layout>
   </React.StrictMode>,
   document.getElementById("root")
 );
