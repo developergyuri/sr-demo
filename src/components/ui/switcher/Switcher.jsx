@@ -39,4 +39,8 @@ Switcher.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
+Switcher.defaultProps = {
+  options: [],
+};
+
 export default Switcher;

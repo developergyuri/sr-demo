@@ -19,4 +19,10 @@ Logo.propTypes = {
   highlighted: PropTypes.string.isRequired,
 };
 
+Logo.defaultProps = {
+  link: "",
+  simple: "",
+  highlighted: "",
+};
+
 export default Logo;
