@@ -121,7 +121,36 @@
 }
 
 @media screen and (max-width: 992px) {
+  .emblaSlide {
+    height: 600px;
+  }
   .slideCover {
     right: -50%;
+  }
+  .slideLabels {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .labelsTitle {
+    font-size: 100px;
+    line-height: 100px;
+  }
+  .labelsText {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .emblaSlide {
+    height: 500px;
+  }
+  .labelsTitle {
+    font-size: 70px;
+    line-height: 70px;
+  }
+  .labelsText {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
