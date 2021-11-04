@@ -81,3 +81,15 @@
 .contentButton > svg {
   margin-left: 17px;
 }
+
+@media screen and (max-width: 992px) {
+  .bannerContainer {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .bannerContainer {
+    padding: 0;
+  }
+}

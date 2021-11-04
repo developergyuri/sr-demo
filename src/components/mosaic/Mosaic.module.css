@@ -45,6 +45,7 @@
 
 @media screen and (max-width: 992px) {
   .mosaicContainer {
+    padding: 0 30px;
     grid-template-rows: minmax(300px, 1fr);
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }

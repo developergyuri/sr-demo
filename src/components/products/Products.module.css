@@ -12,7 +12,7 @@
 }
 
 .productsContainer {
-  padding: 0 70px 0 70px;
+  padding: 0 70px;
   margin-bottom: 85px;
   display: grid;
   grid-template-rows: 1fr;
