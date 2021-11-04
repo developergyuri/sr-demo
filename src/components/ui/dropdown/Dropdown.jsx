@@ -50,7 +50,11 @@ const Dropdown = ({ options }) => {
 };
 
 Dropdown.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string),
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+Dropdown.defaultProps = {
+  options: [],
 };
 
 export default Dropdown;
