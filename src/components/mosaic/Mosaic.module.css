@@ -1,0 +1,59 @@
+.mosaicContainer {
+  padding: 0 70px 0 70px;
+  margin-bottom: 146px;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-rows: minmax(400px, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px 20px;
+}
+
+.mosaicElement {
+  position: relative;
+}
+
+.mosaicElement:first-child,
+.mosaicElement:last-child {
+  grid-column: span 2;
+}
+
+.mosaicElement:not(:first-child):not(:last-child) {
+  grid-column: span 1;
+}
+
+.mosaicElement > .elementImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.mosaicElement > .elementTitle {
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #212121;
+  position: absolute;
+  top: 47px;
+  left: 40px;
+}
+
+.mosaicElement:nth-child(2) > .elementTitle,
+.mosaicElement:nth-child(5) > .elementTitle {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 992px) {
+  .mosaicContainer {
+    padding: 0 30px;
+    grid-template-rows: minmax(300px, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mosaicElement:first-child,
+  .mosaicElement:last-child {
+    grid-column: span 1;
+  }
+}

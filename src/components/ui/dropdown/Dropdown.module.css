@@ -1,0 +1,67 @@
+.dropdown {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border: 1px solid #5c5c5c;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdownOption {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+  padding: 7.5px 0 7.5px 12px;
+  user-select: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdownArrow {
+  padding-right: 12px;
+  width: 9px;
+  height: auto;
+}
+
+.dropdownOptions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0%, 100%);
+  border: 1px solid #5c5c5c;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #212121;
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdownOptions.isOpened {
+  visibility: visible;
+  opacity: 1;
+  max-height: 100px;
+}
+
+.dropdownOptions > .dropdownOption {
+  width: 100%;
+  padding: 7.5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdownOptions > .dropdownOption:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}

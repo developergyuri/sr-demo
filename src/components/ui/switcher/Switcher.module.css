@@ -1,0 +1,27 @@
+.switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 25px;
+}
+
+.switchItem {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #a6a6a6;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0 10px 0 10px;
+  transition: all .3s ease-in-out;
+}
+
+.switchItem:not(:first-child) {
+  border-left: 1px solid #5c5c5c;
+  padding: 0 10px 0 9px;
+}
+
+.switchItem.isSelected {
+  color: #ffffff;
+}
