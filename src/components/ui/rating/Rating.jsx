@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import styles from "./Rating.module.css";
 
 /* Own Components */
-import { ReactComponent as FilledStarIcon } from "../../../assets/product_filled_star.svg";
-import { ReactComponent as StarIcon } from "../../../assets/product_star.svg";
+import { ReactComponent as FilledStarIcon } from "../../../assets/products/product_filled_star.svg";
+import { ReactComponent as StarIcon } from "../../../assets/products/product_star.svg";
 
 const Rating = ({ rating, numOfRating }) => {
   return (

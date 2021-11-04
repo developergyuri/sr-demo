@@ -9,7 +9,7 @@ import Prod2 from "../../assets/products/prod2.png";
 import Prod3 from "../../assets/products/prod3.png";
 import Prod4 from "../../assets/products/prod4.png";
 import ProductCard from "../ui/productCard/ProductCard";
-import { ReactComponent as DetailsArrow } from "../../assets/products_details_arrow.svg";
+import { ReactComponent as DetailsArrow } from "../../assets/products/products_details_arrow.svg";
 
 const Products = () => {
   const productsData = [

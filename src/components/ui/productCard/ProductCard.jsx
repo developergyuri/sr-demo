@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import styles from "./ProductCard.module.css";
 
 /* Own Components */
-import { ReactComponent as FavProductIcon } from "../../../assets/product_heart.svg";
+import { ReactComponent as FavProductIcon } from "../../../assets/products/product_heart.svg";
 import Rating from "../rating/Rating";
 
 const ProductCard = (props) => {

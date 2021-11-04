@@ -5,13 +5,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import styles from "./Carousel.module.css";
 
 /* Own Component */
-import { ReactComponent as LeftArrow } from "../../assets/carousel_arrow_left.svg";
-import { ReactComponent as RightArrow } from "../../assets/carousel_arrow_right.svg";
+import { ReactComponent as LeftArrow } from "../../assets/carousel/carousel_arrow_left.svg";
+import { ReactComponent as RightArrow } from "../../assets/carousel/carousel_arrow_right.svg";
 import { ReactComponent as DetailsArrow } from "../../assets/details_arrow.svg";
 import { useRecursiveTimeout } from "../../helper/useRecursiveTimeout";
 
 /* Data */
-import BgImg from "../../assets/carousel_image.png";
+import BgImg from "../../assets/carousel/carousel_image.png";
 import Dots from "../ui/dots/Dots";
 
 const PARALLAX_FACTOR = 1.5;

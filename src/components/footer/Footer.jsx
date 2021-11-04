@@ -4,22 +4,22 @@ import React from "react";
 import styles from "./Footer.module.css";
 
 /* Own Components */
-import { ReactComponent as FacebookIcon } from "../../assets/footer_fb.svg";
-import { ReactComponent as InstagramIcon } from "../../assets/footer_ig.svg";
-import { ReactComponent as YoutubeIcon } from "../../assets/footer_yt.svg";
-import { ReactComponent as MessengerIcon } from "../../assets/footer_msg.svg";
-import { ReactComponent as TwitterIcon } from "../../assets/footer_tw.svg";
+import { ReactComponent as FacebookIcon } from "../../assets/footer/footer_fb.svg";
+import { ReactComponent as InstagramIcon } from "../../assets/footer/footer_ig.svg";
+import { ReactComponent as YoutubeIcon } from "../../assets/footer/footer_yt.svg";
+import { ReactComponent as MessengerIcon } from "../../assets/footer/footer_msg.svg";
+import { ReactComponent as TwitterIcon } from "../../assets/footer/footer_tw.svg";
 import Switcher from "../ui/switcher/Switcher";
 import Dropdown from "../ui/dropdown/Dropdown";
 
 /* Data */
-import GlsLogo from "../../assets/gls.png";
-import DpdLogo from "../../assets/dpd.png";
-import PaypalLogo from "../../assets/paypal.png";
-import MastercardLogo from "../../assets/mastercard.png";
-import MaestroLogo from "../../assets/maestro.png";
-import ShoprenterLogo from "../../assets/shoprenter.png";
-import ArukeresoLogo from "../../assets/arukereso.png";
+import GlsLogo from "../../assets/footer/gls.png";
+import DpdLogo from "../../assets/footer/dpd.png";
+import PaypalLogo from "../../assets/footer/paypal.png";
+import MastercardLogo from "../../assets/footer/mastercard.png";
+import MaestroLogo from "../../assets/footer/maestro.png";
+import ShoprenterLogo from "../../assets/footer/shoprenter.png";
+import ArukeresoLogo from "../../assets/footer/arukereso.png";
 
 const Footer = () => {
   const footerMenuItems = [

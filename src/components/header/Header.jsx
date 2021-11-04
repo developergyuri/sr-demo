@@ -6,10 +6,10 @@ import styles from "./Header.module.css";
 
 /* Own Components */
 import { ReactComponent as ArrowDownIcon } from "../../assets/arrow_down.svg";
-import { ReactComponent as ProfileIcon } from "../../assets/header_profile.svg";
-import { ReactComponent as HeartIcon } from "../../assets/header_heart.svg";
-import { ReactComponent as BagIcon } from "../../assets/header_bag.svg";
-import { ReactComponent as VialIcon } from "../../assets/subheader_vial.svg";
+import { ReactComponent as ProfileIcon } from "../../assets/header/header_profile.svg";
+import { ReactComponent as HeartIcon } from "../../assets/header/header_heart.svg";
+import { ReactComponent as BagIcon } from "../../assets/header/header_bag.svg";
+import { ReactComponent as VialIcon } from "../../assets/header/subheader_vial.svg";
 import Navigation from "../ui/navigation/Navigation";
 import Searchbar from "../ui/searchbar/Searchbar";
 import Logo from "../ui/logo/Logo";

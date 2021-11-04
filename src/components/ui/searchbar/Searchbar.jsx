@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "./Searchbar.module.css";
 
 /* OwnComponents */
-import { ReactComponent as SearchIcon } from "../../../assets/header_search.svg";
+import { ReactComponent as SearchIcon } from "../../../assets/header/header_search.svg";
 
 const Searchbar = () => {
   const [state, setState] = useState("");
