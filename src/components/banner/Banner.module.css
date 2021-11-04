@@ -1,11 +1,15 @@
 .bannerContainer {
   padding: 0 70px;
   margin-bottom: 100px;
-  height: 500px;
+  min-height: 500px;
 }
 
 .banner {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .banner::after {
@@ -22,7 +26,7 @@
 
 .banner > .bannerImg {
   object-fit: cover;
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 
