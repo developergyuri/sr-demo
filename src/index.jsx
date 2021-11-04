@@ -8,11 +8,13 @@ import "./index.css";
 import Layout from "./components/layout/Layout";
 import Carousel from "./components/carousel/Carousel";
 import Products from "./components/products/Products";
+import Mosaic from "./components/mosaic/Mosaic";
 
 ReactDOM.render(
   <React.StrictMode>
     <Layout>
       <Carousel />
+      <Mosaic />
       <Products />
     </Layout>
   </React.StrictMode>,
