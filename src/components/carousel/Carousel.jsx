@@ -115,7 +115,7 @@ const Carousel = () => {
     <div className={styles.embla}>
       <div className={styles.emblaViewport} ref={emblaRef}>
         <div className={styles.emblaContainer}>
-          {Array.from(Array(5), (_, index) => (
+          {Array.from({ length: 5 }, (_, index) => (
             <div className={styles.emblaSlide} key={index}>
               <div
                 className={styles.emblaSlideParallax}
