@@ -21,7 +21,7 @@
 .headerImg {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .headerIcon {
   position: absolute;
@@ -124,7 +124,7 @@
     grid-template-columns: minmax(200px, 300px) minmax(200px, 1fr);
     grid-template-rows: 1fr;
     gap: 0px 10px;
-    grid-template-areas: "Image Content";
+    grid-template-areas: "Header Content";
   }
 }
 
