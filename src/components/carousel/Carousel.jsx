@@ -7,7 +7,7 @@ import styles from "./Carousel.module.css";
 /* Own Component */
 import { ReactComponent as LeftArrow } from "../../assets/carousel_arrow_left.svg";
 import { ReactComponent as RightArrow } from "../../assets/carousel_arrow_right.svg";
-import { ReactComponent as DetailsArrow } from "../../assets/carousel_details_arrow.svg";
+import { ReactComponent as DetailsArrow } from "../../assets/details_arrow.svg";
 import { useRecursiveTimeout } from "../../helper/useRecursiveTimeout";
 
 /* Data */
